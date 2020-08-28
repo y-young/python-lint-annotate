@@ -31,7 +31,6 @@ if [ "$2" = true ] ; then
         echo "Pylint error"
         echo "::add-matcher::$(pwd)/.github/pylint-error.json"
         echo "::add-matcher::$(pwd)/.github/pylint-warning.json"
-        exit $exit_code
     fi
 
 fi
@@ -48,7 +47,6 @@ if [ "$3" = true ] ; then
         echo "pycodestyle ok"
     else
         echo "pycodestyle error"
-        exit $exit_code
     fi
 
 fi
@@ -65,7 +63,6 @@ if [ "$4" = true ] ; then
     else
         echo "Flake8 error"
         echo "::add-matcher::$(pwd)/.github/flake8.json"
-        exit $exit_code
     fi
 
 fi
@@ -81,7 +78,6 @@ if [ "$5" = true ] ; then
         echo "Black ok"
     else
         echo "Black error"
-        exit $exit_code
     fi
 
 fi
@@ -98,7 +94,6 @@ if [ "$6" = true ] ; then
     else
         echo "mypy error"
         echo "::add-matcher::$(pwd)/.github/mypy.json"
-        exit $exit_code
     fi
 
 fi
@@ -114,7 +109,6 @@ if [ "$7" = true ] ; then
         echo "isort ok"
     else
         echo "isort error"
-        exit $exit_code
     fi
 
 fi
@@ -131,7 +125,6 @@ if [ "$8" = true ] ; then
     else
         echo "vulture error"
         echo "::add-matcher::$(pwd)/.github/vulture.json"
-        exit $exit_code
     fi
 
 fi
