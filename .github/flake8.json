@@ -1,0 +1,18 @@
+{
+  "problemMatcher": [
+    {
+      "severity": "warning",
+      "pattern": [
+        {
+          "regexp": "^(\\033\\[0m)?([^:]+):(\\d+):(\\d+): ([A-Z]\\d{3}) (.*)$",
+          "file": 2,
+          "line": 3,
+          "column": 4,
+          "code": 5,
+          "message": 6
+        }
+      ],
+      "owner": "flake8"
+    }
+  ]
+}

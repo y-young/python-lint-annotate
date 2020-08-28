@@ -4,7 +4,7 @@ inputs:
   python-root-list:
     description: "A list of all paths to test"
     required: false
-    default: "."
+    default: "./**/*.py"
   use-pylint:
     description: "Use Pylint"
     required: false
@@ -27,6 +27,10 @@ inputs:
     default: true
   use-isort:
     description: "Use isort"
+    required: false
+    default: true
+  use-vulture:
+    description: "Use vulture"
     required: false
     default: true
   extra-pylint-options:
@@ -53,6 +57,10 @@ inputs:
     description: "Extra options: isort -rc $(extra-isort-options) $(python-root-list) -c --diff "
     required: false
     default: ""
+  extra-vulture-options:
+    description: "Extra options: vulture $(extra-vulture-options) $(python-root-list)"
+    required: false
+    default: ""
 
 runs:
   using: "docker"
@@ -65,12 +73,14 @@ runs:
     - ${{ inputs.use-black }}
     - ${{ inputs.use-mypy }}
     - ${{ inputs.use-isort }}
+    - ${{ inputs.use-vulture }}
     - ${{ inputs.extra-pylint-options }}
     - ${{ inputs.extra-pycodestyle-options }}
     - ${{ inputs.extra-flake8-options }}
     - ${{ inputs.extra-black-options }}
     - ${{ inputs.extra-mypy-options }}
     - ${{ inputs.extra-isort-options }}
+    - ${{ inputs.extra-vulture-options }}
 branding:
   icon: "terminal"
   color: "white"
