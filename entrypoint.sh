@@ -18,6 +18,17 @@
 # ${14} - extra-isort-options
 # ${15} - extra-vulture-options
 
+cp /code/flake8.json /github/workflow/flake8.json
+cp /code/mypy.json /github/workflow/mypy.json
+cp /code/pylint-error.json /github/workflow/pylint-error.json
+cp /code/pylint-warning.json /github/workflow/pylint-warning.json
+cp /code/vulture.json /github/workflow/vulture.json
+echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/flake8.json"
+echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/mypy.json"
+echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/pylint-error.json"
+echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/pylint-warning.json"
+echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/vulture.json"
+
 if [ "$2" = true ] ; then
 
     echo Running: pylint $9 $1
@@ -29,8 +40,6 @@ if [ "$2" = true ] ; then
         echo "Pylint ok"
     else
         echo "Pylint error"
-        echo "::add-matcher::$(pwd)/.github/pylint-error.json"
-        echo "::add-matcher::$(pwd)/.github/pylint-warning.json"
     fi
 
 fi
@@ -62,7 +71,6 @@ if [ "$4" = true ] ; then
         echo "Flake8 ok"
     else
         echo "Flake8 error"
-        echo "::add-matcher::$(pwd)/.github/flake8.json"
     fi
 
 fi
@@ -93,7 +101,6 @@ if [ "$6" = true ] ; then
         echo "mypy ok"
     else
         echo "mypy error"
-        echo "::add-matcher::$(pwd)/.github/mypy.json"
     fi
 
 fi
@@ -124,7 +131,6 @@ if [ "$8" = true ] ; then
         echo "vulture ok"
     else
         echo "vulture error"
-        echo "::add-matcher::$(pwd)/.github/vulture.json"
     fi
 
 fi
