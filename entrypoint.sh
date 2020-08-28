@@ -35,7 +35,7 @@ if [ "$2" = true ] ; then
 
     echo Running: pylint $9 $1
 
-    pylint $9 $1
+    pylint --output-format="colorized" $9 $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
