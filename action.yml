@@ -1,4 +1,4 @@
-name: "PythonAction"
+name: "PyAction: One-stop Python linter"
 description: "One-stop, zero-configuration GitHub Action for linting and enforcing style in Python projects."
 inputs:
   python-root-list:
