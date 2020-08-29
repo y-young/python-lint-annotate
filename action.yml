@@ -1,5 +1,5 @@
-name: "Python Code Quality and Lint"
-description: "Supports Pylint, pycodestyle, Flake8, black, mypy and isort"
+name: "PyAction"
+description: "One-stop, zero-configuration GitHub Action for linting and enforcing style in Python projects."
 inputs:
   python-root-list:
     description: "A list of all paths to test"
@@ -82,5 +82,5 @@ runs:
     - ${{ inputs.extra-isort-options }}
     - ${{ inputs.extra-vulture-options }}
 branding:
-  icon: "terminal"
-  color: "white"
+  icon: "check"
+  color: "gray-dark"

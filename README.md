@@ -1,29 +1,31 @@
-# python-lint
+# PyAction
 
-<p align="left">
-  <a href="https://github.com/ricardochaves/python-lint"><img alt="All lints status" src="https://github.com/ricardochaves/python-lint/workflows/all-lints/badge.svg"></a></p>
+One-stop, zero-configuration GitHub Action for linting and enforcing style in Python projects.
 
-## About
+## Features
 
-This action must be used for aplication the bids:
+- Zero configuration based: Add a single line in your CI and done!
+- GitHub Annotations on PR: Highlights issues inline on the PR diff.
+- all of most popular community trusted linters in one place.
+
+## Linters supported
 
 - [black](https://github.com/psf/black)
-- [pylint](https://www.pylint.org/)
-- [isort](https://github.com/timothycrosley/isort)
-- [pycodestyle](https://pycodestyle.readthedocs.io)
 - [flake8](http://flake8.pycqa.org)
+- [isort](https://github.com/timothycrosley/isort)
 - [mypy](http://mypy-lang.org/)
+- [pylint](https://www.pylint.org/)
+- [pycodestyle](https://pycodestyle.readthedocs.io)
+- [vulture](https://github.com/jendrikseipp/vulture)
 
 ## Usage
-
-See [action.yml](action.yml)
 
 Basic:
 
 ```yml
 steps:
   - uses: actions/checkout@v1
-  - uses: ricardochaves/python-lint@v1.3.0
+  - uses: rahul-deepsource/pyaction@v1.4.0
 ```
 
 Options:
@@ -31,42 +33,14 @@ Options:
 ```yml
 steps:
   - uses: actions/checkout@v1
-  - uses: ricardochaves/python-lint@v1.3.0
+  - uses: rahul-deepsource/pyaction@v1.4.0
     with:
-      python-root-list: "python_alelo tests"
-      use-pylint: false
+      python-root-list: "src/ tests/"
       use-pycodestyle: false
-      use-flake8: false
-      use-black: false
       use-mypy: false
-      use-isort: false
-      extra-pylint-options: ""
-      extra-pycodestyle-options: ""
-      extra-flake8-options: ""
-      extra-black-options: ""
-      extra-mypy-options: ""
-      extra-isort-options: ""
+      use-vulture: true
+      extra-pylint-options: "--output-format="colorized"
 ```
-
-Command build logic list:
-
-```bash
-pylint $(extra-pylint-options) $(python-root-list)
-
-pycodestyle $(extra-pycodestyle-options) $(python-root-list)
-
-flake8 $(extra-flake8-options) $(python-root-list)
-
-black --check $(extra-black-options) $(python-root-list)
-
-mypy $(extra-mypy-options) $(python-root-list)
-
-isort $(extra-isort-options) $(python-root-list) -c --diff
-```
-
-## Versions used
-
-To identify the version used you must consult the [CHANGELOG.md](https://github.com/ricardochaves/python-lint-image/blob/master/CHANGELOG.md) of the image used in our [Dockerfile](Dockerfile).
 
 ## License
 
@@ -75,3 +49,8 @@ The scripts and documentation in this project are released under the [MIT Licens
 ## Contributions
 
 Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Thanks to
+
+- Ricardo Baltazar Chaves' [python-lint](https://github.com/ricardochaves/python-lint) which was used as a starting point for this project.
+- Florian Bruhin who provided most of the regular expressions for problem matchers.
