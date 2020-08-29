@@ -2,6 +2,8 @@
 
 One-stop, zero-configuration GitHub Action for linting and enforcing style in Python projects.
 
+![Screenshot of annotations](static/annotations.png)
+
 ## Features
 
 - Zero configuration based: Add a single line in your CI and done!
