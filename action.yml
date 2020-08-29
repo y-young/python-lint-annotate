@@ -1,4 +1,4 @@
-name: "PyAction"
+name: "PLint"
 description: "One-stop, zero-configuration GitHub Action for linting and enforcing style in Python projects."
 inputs:
   python-root-list:
