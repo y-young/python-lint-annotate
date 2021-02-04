@@ -18,16 +18,13 @@
 # ${14} - extra-isort-options
 # ${15} - extra-vulture-options
 
-cp /flake8.json /github/workflow/flake8.json
-cp /mypy.json /github/workflow/mypy.json
-cp /pylint-error.json /github/workflow/pylint-error.json
-cp /pylint-warning.json /github/workflow/pylint-warning.json
-cp /vulture.json /github/workflow/vulture.json
+cp /*.json /github/workflow
 echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/flake8.json"
 echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/mypy.json"
 echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/pylint-error.json"
 echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/pylint-warning.json"
 echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/vulture.json"
+echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/pycodestyle-warning.json"
 echo "TERM: changing from $TERM -> xterm"
 export TERM=xterm
 
