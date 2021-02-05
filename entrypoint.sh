@@ -111,7 +111,7 @@ fi
 
 if [ "$6" = true ] ; then
 
-    echo Running: mypy ${14} $1
+    echo Running: mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers ${14} $1
 
     $CONDA/bin/mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers ${14} $1
     exit_code=$?
@@ -156,9 +156,9 @@ fi
 
 if [ "$9" = true ] ; then
 
-    echo Running: pycodestyle ${17} $1
+    echo Running: pydocstyle ${17} $1
 
-    $CONDA/bin/pycodestyle ${17} $1
+    $CONDA/bin/pydocstyle ${17} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
