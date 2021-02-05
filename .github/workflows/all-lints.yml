@@ -6,15 +6,8 @@ jobs:
   lintpython:
     name: Lint Python
     runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        python-version: [3.8]
-
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python }}
     - uses: marian-code/pyaction@master
       with:
         python-root-list: "./tests/'*'.py"
