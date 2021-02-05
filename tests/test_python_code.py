@@ -1,6 +1,8 @@
 """Just one test"""
 
 import uuid
+import collections
+import pathlib
 
 
 def get_name_len(name: str) -> str:

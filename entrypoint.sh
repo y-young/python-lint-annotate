@@ -11,12 +11,14 @@
 # $7 - use-isort
 # $8 - use-vulture
 # $9 - extra-pylint-options
-# ${10} - extra-pycodestyle-options
-# ${11} - extra-flake8-options
-# ${12} - extra-black-options
-# ${13} - extra-mypy-options
-# ${14} - extra-isort-options
-# ${15} - extra-vulture-options
+# $10 - extra-pydocstyle-options
+# ${11} - extra-pycodestyle-options
+# ${12} - extra-flake8-options
+# ${13} - extra-black-options
+# ${14} - extra-mypy-options
+# ${15} - extra-isort-options
+# ${16} - extra-vulture-options
+# ${17} - extra-pydocstyle-options
 
 # for docker
 #cp /*.json .
@@ -30,12 +32,13 @@ echo $6
 echo $7
 echo $8
 echo $9
-echo $10
 echo $11
 echo $12
 echo $13
 echo $14
 echo $15
+echo $16
+echo $17
 
 for matcher in ./*.json
 do
@@ -63,9 +66,9 @@ fi
 
 if [ "$3" = true ] ; then
 
-    echo Running: pycodestyle ${10} $1
+    echo Running: pycodestyle ${11} $1
 
-    pycodestyle ${10} $1
+    pycodestyle ${11} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -78,9 +81,9 @@ fi
 
 if [ "$4" = true ] ; then
 
-    echo Running: flake8 ${11} $1
+    echo Running: flake8 ${12} $1
 
-    flake8 ${11} $1
+    flake8 ${12} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -93,9 +96,9 @@ fi
 
 if [ "$5" = true ] ; then
 
-    echo Running: black --check ${12} $1
+    echo Running: black --check ${13} $1
 
-    black --check ${12} $1
+    black --check ${13} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -108,9 +111,9 @@ fi
 
 if [ "$6" = true ] ; then
 
-    echo Running: mypy ${13} $1
+    echo Running: mypy ${14} $1
 
-    mypy ${13} $1
+    mypy ${14} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -123,9 +126,9 @@ fi
 
 if [ "$7" = true ] ; then
 
-    echo Running: isort ${14} $1 -c --diff
+    echo Running: isort ${15} $1 -c --diff
 
-    isort ${14} $1 -c --diff
+    isort ${15} $1 -c --diff
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -138,15 +141,30 @@ fi
 
 if [ "$8" = true ] ; then
 
-    echo Running: vulture ${15} $1
+    echo Running: vulture ${16} $1
 
-    vulture ${15} $1
+    vulture ${16} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
         echo "vulture ok"
     else
         echo "vulture error"
+    fi
+
+fi
+
+if [ "$9" = true ] ; then
+
+    echo Running: pycodestyle ${17} $1
+
+    pycodestyle ${17} $1
+    exit_code=$?
+
+    if [ "$exit_code" = "0" ]; then
+        echo "pycodestyle ok"
+    else
+        echo "pycodestyle error"
     fi
 
 fi

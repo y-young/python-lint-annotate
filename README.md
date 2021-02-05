@@ -37,7 +37,7 @@ steps:
   - uses: actions/checkout@v1
   - uses: rahul-deepsource/pyaction@v1.4.0
     with:
-      python-root-list: "src/ tests/"
+      python-root-list: "src/ tests/'*'"  # accepts wildcards bit must be enclosed in commas
       use-pycodestyle: false
       use-mypy: false
       use-vulture: true
