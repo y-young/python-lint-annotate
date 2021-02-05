@@ -77,7 +77,7 @@ runs:
         conda --version
         conda env create -f ${{ github.action_path }}/test_conda_env.yml
         conda env list
-        conda activate lint_env
+        source activate lint_env
       shell: bash
       name: Install lintners
     - run: |
