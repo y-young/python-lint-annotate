@@ -1,6 +1,10 @@
 {
   "problemMatcher": [
     {
+      "severity": "warning",
+      "column": 1,
+      "line": 1,
+      "code": "W",
       "pattern": [
         {
           "regexp": "^.* (would reformat) (.*)$",
