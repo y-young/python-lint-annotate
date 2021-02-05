@@ -18,11 +18,11 @@ jobs:
     - uses: marian-code/pyaction@master
       with:
         python-root-list: "./tests/'*'.py"
-        use-black: true
-        use-isort: true
+        use-black: false
+        use-isort: false
         use-mypy: true
         use-pycodestyle: false
-        use-pydocstyle: true
+        use-pydocstyle: false
         extra-pycodestyle-options: "--max-line-length=88"
         use-pylint: false
         use-flake8: false
