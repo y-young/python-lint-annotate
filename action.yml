@@ -62,25 +62,31 @@ inputs:
     required: false
     default: ""
 
-runs:
-  using: "docker"
-  image: "Dockerfile"
-  args:
-    - ${{ inputs.python-root-list }}
-    - ${{ inputs.use-pylint }}
-    - ${{ inputs.use-pycodestyle }}
-    - ${{ inputs.use-flake8 }}
-    - ${{ inputs.use-black }}
-    - ${{ inputs.use-mypy }}
-    - ${{ inputs.use-isort }}
-    - ${{ inputs.use-vulture }}
-    - ${{ inputs.extra-pylint-options }}
-    - ${{ inputs.extra-pycodestyle-options }}
-    - ${{ inputs.extra-flake8-options }}
-    - ${{ inputs.extra-black-options }}
-    - ${{ inputs.extra-mypy-options }}
-    - ${{ inputs.extra-isort-options }}
-    - ${{ inputs.extra-vulture-options }}
-branding:
-  icon: "check"
-  color: "gray-dark"
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    container: python:3-slim
+    run: |
+      pip install pycodestyle
+      pip install pylint
+      pip install mypy
+      pip install black
+      pip install flake8
+      pip install vulture
+      pip install isort
+    run: /entrypoint.sh \
+      ${{ inputs.python-root-list }} \
+      ${{ inputs.use-pylint }} \
+      ${{ inputs.use-pycodestyle }} \
+      ${{ inputs.use-flake8 }} \
+      ${{ inputs.use-black }} \
+      ${{ inputs.use-mypy }} \
+      ${{ inputs.use-isort }} \
+      ${{ inputs.use-vulture }} \
+      ${{ inputs.extra-pylint-options }} \
+      ${{ inputs.extra-pycodestyle-options }} \
+      ${{ inputs.extra-flake8-options }} \
+      ${{ inputs.extra-black-options }} \
+      ${{ inputs.extra-mypy-options }} \
+      ${{ inputs.extra-isort-options }} \
+      ${{ inputs.extra-vulture-options }}

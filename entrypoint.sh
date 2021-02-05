@@ -18,12 +18,8 @@
 # ${14} - extra-isort-options
 # ${15} - extra-vulture-options
 
-pwd
-echo $RUNNER_TEMP
 cp /*.json .
-ls $RUNNER_TEMP/_github_workflow
-ls $RUNNER_TEMP
-ls /
+
 for matcher in ./*.json
 do
     echo adding matcher $matcher
