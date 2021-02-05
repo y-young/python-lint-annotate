@@ -88,7 +88,7 @@ runs:
         $CONDA/bin/pip install black==20.8b1
         $CONDA/bin/pip install flake8==3.8.4
         $CONDA/bin/pip install vulture==2.3
-        $CONDA/bin/pip install isort==isort-5.7.0
+        $CONDA/bin/pip install isort==5.7.0
       shell: bash
       name: Install lintners
     - run: >
