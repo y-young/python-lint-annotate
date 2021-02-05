@@ -46,8 +46,18 @@ steps:
 ```
 
 ## Details
-uses conda environment with python 3.9 all the lintners are installed in their
-newest version available for pyton 3.9
+uses conda environment with python 3.9 and lintner versions are:
+
+```bash
+pycodestyle==2.6.0
+pydocstyle==5.1.1
+pylint==2.6.0
+mypy==0.800
+black==20.8b1
+flake8==3.8.4
+vulture==2.3
+isort==isort-5.7.0
+```
 
 ## License
 
