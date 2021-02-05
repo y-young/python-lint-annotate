@@ -75,7 +75,7 @@ runs:
   steps: 
     - run: |
         conda --version
-        conda env create -f {{ github.action_path }}/entrypoint.sh --yes
+        conda env create -f {{ github.action_path }}/test_conda_env.yml --yes
         conda env list
         conda activate lint_env
       shell: bash
