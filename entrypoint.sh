@@ -20,11 +20,11 @@
 
 pwd
 echo $RUNNER_TEMP
-cp /*.json /github/workflow
+cp /*.json .
 ls $RUNNER_TEMP/_github_workflow
 ls $RUNNER_TEMP
 ls /
-for matcher in /*.json
+for matcher in ./*.json
 do
     echo adding matcher $matcher
     echo "::add-matcher::${matcher}"
