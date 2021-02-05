@@ -74,25 +74,23 @@ runs:
   using: "composite"
   steps: 
     - run: |
-        conda --version
-        conda env create -f ${{ github.action_path }}/test_conda_env.yml
-        conda env list
-        activate lint_env
+        $CONDA/bin/conda --version
+        $CONDA/bin/conda env update --file ${{ github.action_path }}/test_conda_env.yml --name base
       shell: bash
       name: Install lintners
     - run: |
-        python --version
-        pip freeze
-        pip install wheel
-        pip install setuptools
-        pip install pycodestyle
-        pip install pydocstyle
-        pip install pylint
-        pip install mypy
-        pip install black
-        pip install flake8
-        pip install vulture
-        pip install isort
+        $CONDA/bin/python --version
+        $CONDA/bin/pip freeze
+        $CONDA/bin/pip install wheel
+        $CONDA/bin/pip install setuptools
+        $CONDA/bin/pip install pycodestyle
+        $CONDA/bin/pip install pydocstyle
+        $CONDA/bin/pip install pylint
+        $CONDA/bin/pip install mypy
+        $CONDA/bin/pip install black
+        $CONDA/bin/pip install flake8
+        $CONDA/bin/pip install vulture
+        $CONDA/bin/pip install isort
       shell: bash
       name: Install lintners
     - run: ${{ github.action_path }}/entrypoint.sh ${{ inputs.python-root-list }} ${{ inputs.use-pylint }} ${{ inputs.use-pycodestyle }} ${{ inputs.use-flake8 }} ${{ inputs.use-black }} ${{ inputs.use-mypy }} ${{ inputs.use-isort }} ${{ inputs.use-vulture }} ${{ inputs.extra-pylint-options }} ${{ inputs.extra-pycodestyle-options }} ${{ inputs.extra-flake8-options }} ${{ inputs.extra-black-options }} ${{ inputs.extra-mypy-options }} ${{ inputs.extra-isort-options }} ${{ inputs.extra-vulture-options }}
