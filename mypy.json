@@ -3,11 +3,11 @@
     {
       "pattern": [
         {
-          "regexp": "^.* (\\S*):(\\d+):(.*)$",
-          "file": 2,
-          "line": 3,
-          "message": 5,
-          "code": 6
+          "regexp": "^.* (\\S*):(\\d+): (\\S+): (.*)$",
+          "file": 1,
+          "line": 2,
+          "severity": 3,
+          "message": 4
         }
       ],
       "owner": "mypy"
