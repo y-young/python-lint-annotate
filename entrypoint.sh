@@ -21,6 +21,9 @@
 pwd
 echo $RUNNER_TEMP
 cp /*.json /github/workflow
+ls $RUNNER_TEMP/_github_workflow
+ls $RUNNER_TEMP
+ls /
 for matcher in $RUNNER_TEMP/_github_workflow/*.json
 do
     echo adding matcher $matcher
