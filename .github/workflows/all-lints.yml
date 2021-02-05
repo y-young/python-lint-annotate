@@ -21,10 +21,10 @@ jobs:
         use-black: true
         use-isort: true
         use-mypy: true
-        use-pycodestyle: false
+        use-pycodestyle: true
         use-pydocstyle: true
         extra-pycodestyle-options: "--max-line-length=88"
-        use-pylint: false
+        use-pylint: true
         use-flake8: true
         use-vulture: true
 
