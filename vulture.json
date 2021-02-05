@@ -3,7 +3,7 @@
     {
       "pattern": [
         {
-          "regexp": "^##\\[([a-z]+)\\]([^:]+):(\\d+): ([^(]+ \\(\\d+% confidence\\))$",
+          "regexp": "^#{0,2}\\[([a-z]+)\\]([^:]+):(\\d+): ([^(]+ \\(\\d+% confidence\\))$",
           "severity": 1,
           "file": 2,
           "line": 3,
