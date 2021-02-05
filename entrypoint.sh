@@ -18,7 +18,8 @@
 # ${14} - extra-isort-options
 # ${15} - extra-vulture-options
 
-cp /*.json .
+# for docker
+#cp /*.json .
 
 for matcher in ./*.json
 do
