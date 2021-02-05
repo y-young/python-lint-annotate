@@ -79,7 +79,7 @@ runs:
         pip install isort
       shell: bash
       name: Install lintners
-    - run: ${{ github.action_path }}entrypoint.sh \
+    - run: ${{ github.action_path }}/entrypoint.sh \
         ${{ inputs.python-root-list }} \
         ${{ inputs.use-pylint }} \
         ${{ inputs.use-pycodestyle }} \
