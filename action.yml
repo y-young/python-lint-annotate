@@ -62,13 +62,10 @@ inputs:
     required: false
     default: ""
 
-jobs:
-  lint:
-    runs-on: ubuntu-latest
-    container: python:3-slim
-    steps:
-    - name: Install lintners
-      run: |
+runs:
+  using: "composite"
+  steps: 
+    - run: |
         pip install pycodestyle
         pip install pylint
         pip install mypy
@@ -76,8 +73,9 @@ jobs:
         pip install flake8
         pip install vulture
         pip install isort
-    - name: Lint
-      run: /entrypoint.sh \
+      shell: bash
+      name: Install lintners
+    - run: ${{ github.action_path }}entrypoint.sh \
         ${{ inputs.python-root-list }} \
         ${{ inputs.use-pylint }} \
         ${{ inputs.use-pycodestyle }} \
@@ -93,3 +91,5 @@ jobs:
         ${{ inputs.extra-mypy-options }} \
         ${{ inputs.extra-isort-options }} \
         ${{ inputs.extra-vulture-options }}
+      shell: bash
+      name: Lint
