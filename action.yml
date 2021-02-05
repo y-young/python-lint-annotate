@@ -79,21 +79,6 @@ runs:
         pip install isort
       shell: bash
       name: Install lintners
-    - run: ${{ github.action_path }}/entrypoint.sh \
-        ${{ inputs.python-root-list }} \
-        ${{ inputs.use-pylint }} \
-        ${{ inputs.use-pycodestyle }} \
-        ${{ inputs.use-flake8 }} \
-        ${{ inputs.use-black }} \
-        ${{ inputs.use-mypy }} \
-        ${{ inputs.use-isort }} \
-        ${{ inputs.use-vulture }} \
-        ${{ inputs.extra-pylint-options }} \
-        ${{ inputs.extra-pycodestyle-options }} \
-        ${{ inputs.extra-flake8-options }} \
-        ${{ inputs.extra-black-options }} \
-        ${{ inputs.extra-mypy-options }} \
-        ${{ inputs.extra-isort-options }} \
-        ${{ inputs.extra-vulture-options }}
+    - run: ${{ github.action_path }}/entrypoint.sh ${{ inputs.python-root-list }} ${{ inputs.use-pylint }} ${{ inputs.use-pycodestyle }} ${{ inputs.use-flake8 }} ${{ inputs.use-black }} ${{ inputs.use-mypy }} ${{ inputs.use-isort }} ${{ inputs.use-vulture }} ${{ inputs.extra-pylint-options }} ${{ inputs.extra-pycodestyle-options }} ${{ inputs.extra-flake8-options }} ${{ inputs.extra-black-options }} ${{ inputs.extra-mypy-options }} ${{ inputs.extra-isort-options }} ${{ inputs.extra-vulture-options }}
       shell: bash
       name: Lint

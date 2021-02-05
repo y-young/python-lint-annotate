@@ -21,6 +21,22 @@
 # for docker
 #cp /*.json .
 
+echo $S1
+echo $S2
+echo $S3
+echo $S4
+echo $S5
+echo $S6
+echo $S7
+echo $S8
+echo $S9
+echo $S10
+echo $S11
+echo $S12
+echo $S13
+echo $S14
+echo $S15
+
 for matcher in ./*.json
 do
     echo adding matcher $matcher
