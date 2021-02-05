@@ -52,7 +52,7 @@ if [ "$2" = true ] ; then
 
     echo Running: pylint $9 $1
 
-    pylint --output-format="colorized" $9 $1
+    $CONDA/bin/pylint --output-format="colorized" $9 $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -68,7 +68,7 @@ if [ "$3" = true ] ; then
 
     echo Running: pycodestyle ${11} $1
 
-    pycodestyle ${11} $1
+    $CONDA/bin/pycodestyle ${11} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -83,7 +83,7 @@ if [ "$4" = true ] ; then
 
     echo Running: flake8 ${12} $1
 
-    flake8 ${12} $1
+    $CONDA/bin/flake8 ${12} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -98,7 +98,7 @@ if [ "$5" = true ] ; then
 
     echo Running: black --check ${13} $1
 
-    black --check ${13} $1
+    $CONDA/bin/black --check ${13} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -113,7 +113,7 @@ if [ "$6" = true ] ; then
 
     echo Running: mypy ${14} $1
 
-    mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers ${14} $1
+    $CONDA/bin/mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers ${14} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -128,7 +128,7 @@ if [ "$7" = true ] ; then
 
     echo Running: isort ${15} $1 -c --diff
 
-    isort ${15} $1 -c --diff
+    $CONDA/bin/isort ${15} $1 -c --diff
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -143,7 +143,7 @@ if [ "$8" = true ] ; then
 
     echo Running: vulture ${16} $1
 
-    vulture ${16} $1
+    $CONDA/bin/vulture ${16} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -158,7 +158,7 @@ if [ "$9" = true ] ; then
 
     echo Running: pycodestyle ${17} $1
 
-    pycodestyle ${17} $1
+    $CONDA/bin/pycodestyle ${17} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
