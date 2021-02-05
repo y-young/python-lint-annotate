@@ -19,12 +19,7 @@
 # ${15} - extra-vulture-options
 
 cp /*.json /github/workflow
-echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/flake8.json"
-echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/mypy.json"
-echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/pylint-error.json"
-echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/pylint-warning.json"
-echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/vulture.json"
-echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/pycodestyle-warning.json"
+echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/*.json"
 echo "TERM: changing from $TERM -> xterm"
 export TERM=xterm
 
