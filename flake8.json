@@ -5,11 +5,11 @@
       "pattern": [
         {
           "regexp": "(\\S+):(\\d+):(\\d+): ([A-Z]\\d+) (.*)",
-          "file": 2,
-          "line": 3,
-          "column": 4,
-          "code": 5,
-          "message": 6
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "code": 4,
+          "message": 5
         }
       ],
       "owner": "flake8"
