@@ -17,7 +17,7 @@ jobs:
         python-version: ${{ matrix.python }}
     - uses: marian-code/pyaction@master
       with:
-        python-root-list: "./tests/*.py"
+        python-root-list: "./tests/'*'.py"
         use-black: true
         use-isort: true
         use-mypy: true
