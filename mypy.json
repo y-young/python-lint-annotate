@@ -2,6 +2,7 @@
   "problemMatcher": [
     {
       "code": "E",
+      "column": 1,
       "pattern": [
         {
           "regexp": "^.* (\\S*):(\\d+):(\\d+): (\\S+): (.*)$",
