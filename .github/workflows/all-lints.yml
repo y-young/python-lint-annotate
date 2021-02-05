@@ -11,8 +11,8 @@ jobs:
     - uses: marian-code/pyaction@master
       with:
         python-root-list: "./tests/'*'.py"
-        use-black: true
-        use-isort: true
+        use-black: false
+        use-isort: false
         use-mypy: true
         use-pycodestyle: false
         use-pydocstyle: true
