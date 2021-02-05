@@ -7,7 +7,7 @@
       "code": "W",
       "pattern": [
         {
-          "regexp": "^.* (would reformat) (.*)$",
+          "regexp": "^(would reformat) (.*)$",
           "file": 2,
           "message": 1
         }
