@@ -74,6 +74,13 @@ runs:
   using: "composite"
   steps: 
     - run: |
+        conda --version
+        conda env create -f {{ github.action_path }}/entrypoint.sh --yes
+        conda env list
+        conda activate lint_env
+      shell: bash
+      name: Install lintners
+    - run: |
         python --version
         pip freeze
         pip install wheel

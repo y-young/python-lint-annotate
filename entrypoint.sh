@@ -113,7 +113,7 @@ if [ "$6" = true ] ; then
 
     echo Running: mypy ${14} $1
 
-    mypy ${14} $1
+    mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers ${14} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then

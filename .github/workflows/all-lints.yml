@@ -22,7 +22,9 @@ jobs:
         use-isort: true
         use-mypy: true
         use-pycodestyle: true
+        use-pydocstyle: true
         extra-pycodestyle-options: "--max-line-length=88"
         use-pylint: false
         use-flake8: false
         use-vulture: false
+

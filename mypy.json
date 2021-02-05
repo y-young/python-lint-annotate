@@ -1,9 +1,10 @@
 {
   "problemMatcher": [
     {
+      "code": "E",
       "pattern": [
         {
-          "regexp": "^.* (\\S*):(\\d+): (\\S+): (.*)$",
+          "regexp": "^.* (\\S*):(\\d+):(\\d+): (\\S+): (.*)$",
           "file": 1,
           "line": 2,
           "severity": 3,

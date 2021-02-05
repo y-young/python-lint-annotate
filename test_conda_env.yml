@@ -1,0 +1,10 @@
+name: lint_env
+channels:
+- deepmodeling
+dependencies:
+- python>=3.8
+- pip
+~
+~
+~
+~
