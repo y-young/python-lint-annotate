@@ -12,7 +12,7 @@
           "message": 6
         }
       ],
-      "owner": "pycodestyle"
+      "owner": "pycodestyle_severity"
     }
   ]
 }

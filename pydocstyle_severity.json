@@ -15,7 +15,7 @@
                     "code": 2
                 }
             ],
-            "owner": "pydocstyle"
+            "owner": "pydocstyle_severity"
         }
     ]
 }

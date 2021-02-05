@@ -12,7 +12,7 @@
           "message": 6
         }
       ],
-      "owner": "flake8"
+      "owner": "flake8_severity"
     }
   ]
 }
