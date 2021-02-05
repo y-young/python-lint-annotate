@@ -24,7 +24,7 @@ cp /*.json /github/workflow
 ls $RUNNER_TEMP/_github_workflow
 ls $RUNNER_TEMP
 ls /
-for matcher in $RUNNER_TEMP/_github_workflow/*.json
+for matcher in /*.json
 do
     echo adding matcher $matcher
     echo "::add-matcher::${matcher}"
