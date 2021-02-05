@@ -67,7 +67,6 @@ runs:
   steps: 
     - run: |
         pip install pycodestyle
-        pip install pylint
         pip install mypy
         pip install black
         pip install flake8
