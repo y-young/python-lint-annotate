@@ -66,15 +66,15 @@ runs:
   using: "composite"
   steps: 
     - run: |
-        python --version
-        pip install wheel
-        pip install pycodestyle
-        pip install pylint
-        pip install mypy
-        pip install black
-        pip install flake8
-        pip install vulture
-        pip install isort
+        python3 --version
+        pip3 install wheel
+        pip3 install pycodestyle
+        pip3 install pylint
+        pip3 install mypy
+        pip3 install black
+        pip3 install flake8
+        pip3 install vulture
+        pip3 install isort
       shell: bash
       name: Install lintners
     - run: ${{ github.action_path }}entrypoint.sh \
