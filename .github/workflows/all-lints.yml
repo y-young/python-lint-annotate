@@ -19,10 +19,10 @@ jobs:
       with:
         python-root-list: "./tests/'*'.py"
         use-black: true
-        use-isort: false
-        use-mypy: false
-        use-pycodestyle: false
-        use-pydocstyle: false
+        use-isort: true
+        use-mypy: true
+        use-pycodestyle: true
+        use-pydocstyle: true
         extra-pycodestyle-options: "--max-line-length=88"
         use-pylint: false
         use-flake8: false
