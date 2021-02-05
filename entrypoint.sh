@@ -19,7 +19,10 @@
 # ${15} - extra-vulture-options
 
 cp /*.json /github/workflow
-echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/*.json"
+for matcher in ${RUNNER_TEMP}/_github_workflow/*.json
+do
+    echo "::add-matcher::${matcher}"
+done
 echo "TERM: changing from $TERM -> xterm"
 export TERM=xterm
 
