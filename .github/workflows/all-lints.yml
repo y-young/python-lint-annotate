@@ -6,7 +6,6 @@ jobs:
   lintpython:
     name: Lint Python
     runs-on: ubuntu-20.04
-
     steps:
     - uses: actions/checkout@v1
     - uses: marian-code/pyaction@master

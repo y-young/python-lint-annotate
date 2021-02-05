@@ -4,11 +4,11 @@
       "code": "E",
       "pattern": [
         {
-          "regexp": "^#{0,2}\\[([a-z]*)\\](\\S*)(\\d+):(\\d+): ([a-z]+): (.*)$",
-          "file": 2,
-          "column": 4,
-          "line": 3,
-          "severity": 1,
+          "regexp": "^(\\S*)(\\d+):(\\d+): ([a-z]+): (.*)$",
+          "file": 1,
+          "column": 3,
+          "line": 2,
+          "severity": 4,
           "message": 5
         }
       ],
