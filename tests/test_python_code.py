@@ -1,10 +1,11 @@
-"""Just one teste"""
+"""Just one test"""
 
 import uuid
 
 
-def get_name_len(name: str) -> int:
+def get_name_len(name: str) -> str:
     """Len var"""
+    a=5
     return len(name)
 
 

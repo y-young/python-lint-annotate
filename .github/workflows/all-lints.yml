@@ -1,11 +1,30 @@
-name: all-lints
+name: test-lints
 
-on: [push]
-
+on:
+  push:
+  pull_request:
+name: Lint Python
 jobs:
-  lint:
+  lintpython:
+    name: Lint Python
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6]
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: rahul-deepsource/pyaction@master
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python }}
+    - uses: marian-code/pyaction@master
+      with:
+        python-root-list: "./tests/*.py"
+        use-black: true
+        use-isort: true
+        use-mypy: true
+        use-pycodestyle: true
+        extra-pycodestyle-options: "--max-line-length=88"
+        use-pylint: false
+        use-flake8: false
+        use-vulture: false
