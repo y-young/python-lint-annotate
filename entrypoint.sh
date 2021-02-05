@@ -60,9 +60,8 @@ if [ "$2" = true ] ; then
     else
         echo "Pylint error"
     fi
-else
-    echo "Pylint will not run"
-f
+
+fi
 
 
 if [ "$3" = true ] ; then
@@ -77,8 +76,7 @@ if [ "$3" = true ] ; then
     else
         echo "pycodestyle error"
     fi
-else
-    echo "pycodestyle will not run"
+
 fi
 
 if [ "$4" = true ] ; then
@@ -93,8 +91,7 @@ if [ "$4" = true ] ; then
     else
         echo "Flake8 error"
     fi
-else
-    echo "Flake8 will not run"
+
 fi
 
 if [ "$5" = true ] ; then
@@ -109,13 +106,12 @@ if [ "$5" = true ] ; then
     else
         echo "Black error"
     fi
-else
-    echo "Black will not run"
+
 fi
 
 if [ "$6" = true ] ; then
 
-    echo Running: mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers ${14} $1
+    echo Running: mypy ${14} $1
 
     $CONDA/bin/mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers ${14} $1
     exit_code=$?
@@ -125,8 +121,7 @@ if [ "$6" = true ] ; then
     else
         echo "mypy error"
     fi
-else
-    echo "mypy will not run"
+
 fi
 
 if [ "$7" = true ] ; then
@@ -141,8 +136,7 @@ if [ "$7" = true ] ; then
     else
         echo "isort error"
     fi
-else
-    echo "isort will not run"
+
 fi
 
 if [ "$8" = true ] ; then
@@ -157,8 +151,7 @@ if [ "$8" = true ] ; then
     else
         echo "vulture error"
     fi
-else
-    echo "vulture will not run"
+
 fi
 
 if [ "$9" = true ] ; then
@@ -173,6 +166,5 @@ if [ "$9" = true ] ; then
     else
         echo "pycodestyle error"
     fi
-else
-    echo "pycodestyle will not run"
+
 fi
