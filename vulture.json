@@ -1,13 +1,13 @@
 {
   "problemMatcher": [
     {
-      "severity": "warning",
       "pattern": [
         {
-          "regexp": "^([^:]+):(\\d+): ([^(]+ \\(\\d+% confidence\\))$",
-          "file": 1,
-          "line": 2,
-          "message": 3
+          "regexp": "^##\\[([a-z]+)\\]([^:]+):(\\d+): ([^(]+ \\(\\d+% confidence\\))$",
+          "severity": 1,
+          "file": 2,
+          "line": 3,
+          "message": 4
         }
       ],
       "owner": "vulture"
