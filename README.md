@@ -19,6 +19,7 @@ One-stop, zero-configuration GitHub Action for linting and enforcing style in Py
 - [pylint](https://www.pylint.org/)
 - [pycodestyle](https://pycodestyle.readthedocs.io)
 - [vulture](https://github.com/jendrikseipp/vulture)
+- [pydocstyle](https://github.com/PyCQA/pydocstyle)
 
 ## Usage
 
@@ -43,6 +44,10 @@ steps:
       use-vulture: true
       extra-pylint-options: "--output-format="colorized"
 ```
+
+## Details
+uses conda environment with python 3.9 all the lintners are installed in their
+newest version available for pyton 3.9
 
 ## License
 
