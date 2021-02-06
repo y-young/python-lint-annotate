@@ -90,6 +90,7 @@ runs:
         sudo apt install tree
         printenv
         echo $RUNNER_TEMP 
+        ls -l $GITHUB_ACTION_PATH
         echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         tree ../..
         ls -l

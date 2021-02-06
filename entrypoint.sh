@@ -41,10 +41,7 @@ echo extra-isort-options:       $15
 echo extra-vulture-options:     $16
 echo extra-pydocstyle-options:  $17
 
-ls -l /
-ls -l .
-
-for matcher in /*.json
+for matcher in $GITHUB_ACTION_PATH/matchers/*.json
 do
     echo adding matcher $matcher
     echo "::add-matcher::${matcher}"
