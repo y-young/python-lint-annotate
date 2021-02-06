@@ -1,6 +1,6 @@
-# PyLInt
+# python-lint-annotate
 
-One-stop, zero-configuration GitHub Action for linting and enforcing style in Python projects.
+Zero-configuration GitHub Action to maintain code quality with push and PR annotations.
 
 ![Screenshot of annotations](static/annotations.png)
 
@@ -100,8 +100,6 @@ jobs:
         conda-python-version: "3.8"
 ```
 
-
-
 ## License
 
 The scripts and documentation in this project are released under the [MIT License](LICENSE)
@@ -109,3 +107,8 @@ The scripts and documentation in this project are released under the [MIT Licens
 ## Contributions
 
 Contributions are welcome through PRs.
+
+## TODO
+
+Wait until this is resolved: [PR646](https://github.com/actions/runner/issues/646)
+so we can implement better python version contro

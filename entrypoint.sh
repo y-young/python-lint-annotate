@@ -23,24 +23,25 @@
 # for docker
 #cp /*.json .
 
-echo $1
-echo $2
-echo $3
-echo $4
-echo $5
-echo $6
-echo $7
-echo $8
-echo $9
-echo $11
-echo $12
-echo $13
-echo $14
-echo $15
-echo $16
-echo $17
+echo python-root-list:          $1
+echo use-pylint:                $2
+echo use-pycodestyle:           $3
+echo use-flake8:                $4
+echo use-black:                 $5
+echo use-mypy:                  $6
+echo use-isort:                 $7
+echo use-vulture:               $8
+echo extra-pylint-options:      $9
+echo extra-pydocstyle-options:  $10
+echo extra-pycodestyle-options: $11
+echo extra-flake8-options:      $12
+echo extra-black-options:       $13
+echo extra-mypy-options:        $14
+echo extra-isort-options:       $15
+echo extra-vulture-options:     $16
+echo extra-pydocstyle-options:  $17
 
-for matcher in ./*.json
+for matcher in ./matchers/*.json
 do
     echo adding matcher $matcher
     echo "::add-matcher::${matcher}"
