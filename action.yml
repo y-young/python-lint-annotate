@@ -81,6 +81,11 @@ runs:
   using: "composite"
   steps:
     - run: |
+        ls -l ..
+        ls -l ../..
+        ls -l /
+        sudo apt install tree
+        tree ../..
         ls -l
         cp matchers/*.json /
       shell: bash
