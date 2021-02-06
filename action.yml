@@ -1,7 +1,8 @@
 name: "Python-lint-annotate: maintain code quality with annotated PRs and pushes"
 description: "Zero-configuration GitHub Action to maintain code quality with push and PR annotations."
-icon: "alert-triangle"
-color: "yellow"
+branding:
+  icon: "alert-triangle"
+  color: "yellow"
 inputs:
   python-root-list:
     description: "A list of all paths to test"
