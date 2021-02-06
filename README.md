@@ -28,7 +28,7 @@ Basic:
 ```yml
 steps:
   - uses: actions/checkout@v1
-  - uses: marian-code/python-lint-annotate@v2.1.0
+  - uses: marian-code/python-lint-annotate@v2.2.0
 ```
 
 Options:
@@ -36,7 +36,7 @@ Options:
 ```yml
 steps:
   - uses: actions/checkout@v1
-  - uses: marian-code/python-lint-annotate@v2.1.0
+  - uses: marian-code/python-lint-annotate@v2.2.0
     with:
       python-root-list: "src/ tests/'*'"  # accepts wildcards bit must be enclosed in commas
       use-pycodestyle: false
