@@ -78,7 +78,10 @@ inputs:
 
 runs:
   using: "composite"
-  steps: 
+  steps:
+    - run: |
+      ls -l
+      cp matchers/*.json /
     - run: |
         $CONDA/bin/conda --version
         $CONDA/bin/conda install python=${{ inputs.conda-python-version }}

@@ -41,7 +41,10 @@ echo extra-isort-options:       $15
 echo extra-vulture-options:     $16
 echo extra-pydocstyle-options:  $17
 
-for matcher in ./matchers/*.json
+ls -l /
+ls -l .
+
+for matcher in /*.json
 do
     echo adding matcher $matcher
     echo "::add-matcher::${matcher}"
