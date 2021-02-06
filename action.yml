@@ -81,10 +81,14 @@ runs:
   using: "composite"
   steps:
     - run: |
+        pwd
+        echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         ls -l ..
         ls -l ../..
         ls -l /
         sudo apt install tree
+        echo $RUNNER_TEMP 
+        exho !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         tree ../..
         ls -l
         cp matchers/*.json /
