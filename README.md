@@ -2,6 +2,9 @@
 
 Zero-configuration GitHub Action to maintain code quality with push and PR annotations.
 
+On every push and pull request git diffs will get inline annotated with found lintner
+errors.
+
 ![Screenshot of annotations](static/annotations.png)
 
 ## Features
