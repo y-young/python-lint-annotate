@@ -81,22 +81,6 @@ runs:
   using: "composite"
   steps:
     - run: |
-        pwd
-        echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        ls -l ..
-        ls -l ../..
-        ls -l /
-        echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        sudo apt install tree
-        printenv
-        echo $RUNNER_TEMP 
-        ls -l $GITHUB_ACTION_PATH
-        echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        tree ../..
-        ls -l
-        cp matchers/*.json /
-      shell: bash
-    - run: |
         $CONDA/bin/conda --version
         $CONDA/bin/conda install python=${{ inputs.conda-python-version }}
       shell: bash
