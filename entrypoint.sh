@@ -20,9 +20,6 @@
 # ${16} - extra-vulture-options
 # ${17} - extra-pydocstyle-options
 
-# for docker
-#cp /*.json .
-
 echo python-root-list:          $1
 echo use-pylint:                $2
 echo use-pycodestyle:           $3
@@ -41,6 +38,7 @@ echo extra-isort-options:       $15
 echo extra-vulture-options:     $16
 echo extra-pydocstyle-options:  $17
 
+# actions path has the copy of this actions repo
 for matcher in $GITHUB_ACTION_PATH/matchers/*.json
 do
     echo adding matcher $matcher
