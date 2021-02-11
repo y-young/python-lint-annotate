@@ -7,7 +7,7 @@ inputs:
   python-root-list:
     description: "A list of all paths to test"
     required: false
-    default: "./**/*.py"
+    default: "'./**/*.py'"
   use-pylint:
     description: "Use Pylint"
     required: false
@@ -92,6 +92,7 @@ runs:
       name: Install lintners
     - run: >
         ${{ github.action_path }}/entrypoint.sh
+        ${{ inputs.python-root-list }}
         ${{ inputs.use-pylint }}
         ${{ inputs.use-pycodestyle }}
         ${{ inputs.use-flake8 }}
@@ -108,6 +109,5 @@ runs:
         ${{ inputs.extra-isort-options }}
         ${{ inputs.extra-vulture-options }}
         ${{ inputs.extra-pydocstyle-options }}
-        ${{ inputs.python-root-list }}
       shell: bash
       name: Lint
