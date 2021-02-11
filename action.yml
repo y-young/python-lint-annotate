@@ -43,35 +43,35 @@ inputs:
   extra-pylint-options:
     description: "Extra options: pylint $(extra-pylint-options) $(python-root-list)"
     required: false
-    default: ""
+    default: "''"
   extra-pycodestyle-options:
     description: "Extra options: pycodestyle $(extra-pycodestyle-options) $(python-root-list)"
     required: false
-    default: ""
+    default: "''"
   extra-flake8-options:
     description: "Extra options: flake8 $(extra-flake8-options) $(python-root-list)"
     required: false
-    default: ""
+    default: "''"
   extra-black-options:
     description: "Extra options: black --check $(extra-black-options) $(python-root-list)"
     required: false
-    default: ""
+    default: "''"
   extra-mypy-options:
     description: "Extra options: mypy $(extra-mypy-options) $(python-root-list)"
     required: false
-    default: ""
+    default: "''"
   extra-isort-options:
     description: "Extra options: isort -rc $(extra-isort-options) $(python-root-list) -c --diff "
     required: false
-    default: ""
+    default: "''"
   extra-vulture-options:
     description: "Extra options: vulture $(extra-vulture-options) $(python-root-list)"
     required: false
-    default: ""
+    default: "''"
   extra-pydocstyle-options:
     description: "Extra options: pydocstyle $(extra-pydocstyle-options) $(python-root-list)"
     required: false
-    default: ""
+    default: "''"
   conda-python-version:
     description: "Tests are run in Conda environment, set desired python version with this keyword"
     required: false
