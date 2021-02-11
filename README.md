@@ -41,7 +41,7 @@ steps:
   - uses: actions/checkout@v1
   - uses: marian-code/python-lint-annotate@v2.3.0
     with:
-      python-root-list: "src/ tests/'*'"  # accepts wildcards bit must be enclosed in commas
+      python-root-list: "'src/ tests/*'"  # accepts wildcards, whole expresion must be enclosed in commas
       use-pycodestyle: false
       use-mypy: false
       use-vulture: true
