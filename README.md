@@ -41,7 +41,7 @@ steps:
   - uses: actions/checkout@v1
   - uses: marian-code/python-lint-annotate@v2.5.0
     with:
-      python-root-list: "'src/ tests/*'"  # accepts wildcards, whole expresion must be enclosed in commas
+      python-root-list: "src/ tests/*"  # accepts wildcards
       use-pycodestyle: false
       use-mypy: false
       use-vulture: true
@@ -90,7 +90,7 @@ jobs:
     - uses: actions/checkout@v1
     - uses: marian-code/pyaction@v2.5.0
       with:
-        python-root-list: "./tests/'*'.py"
+        python-root-list: "./tests/*.py"
         use-black: true
         use-isort: true
         use-mypy: true
@@ -114,4 +114,4 @@ Contributions are welcome through PRs.
 ## TODO
 
 Wait until this is resolved: [PR646](https://github.com/actions/runner/issues/646)
-so we can implement better python version contro
+so we can implement better python version control
