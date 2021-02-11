@@ -2,44 +2,41 @@
 
 # Parameters
 #
-# $1 - use-pylint
-# $2 - use-pycodestyle
-# $3 - use-flake8
-# $4 - use-black
-# $5 - use-mypy
-# $6 - use-isort
-# $7 - use-vulture
-# $8 - use-pydocstyle
-# $9 - extra-pylint-options
-# $10 - extra-pycodestyle-options
-# $11 - extra-flake8-options
-# $12 - extra-black-options
-# $13 - extra-mypy-options
-# $14 - extra-isort-options
-# $15 - extra-vulture-options
-# $16 - extra-pydocstyle-options
-# $@ - python-root-list
+# $1 - python-root-list
+# $2 - use-pylint
+# $3 - use-pycodestyle
+# $4 - use-flake8
+# $5 - use-black
+# $6 - use-mypy
+# $7 - use-isort
+# $8 - use-vulture
+# $9 - use-pydocstyle
+# $10 - extra-pylint-options
+# ${11} - extra-pycodestyle-options
+# ${12} - extra-flake8-options
+# ${13} - extra-black-options
+# ${14} - extra-mypy-options
+# ${15} - extra-isort-options
+# ${16} - extra-vulture-options
+# ${17} - extra-pydocstyle-options
 
-echo use-pylint:                $1
-echo use-pycodestyle:           $2
-echo use-flake8:                $3
-echo use-black:                 $4
-echo use-mypy:                  $5
-echo use-isort:                 $6
-echo use-vulture:               $7
-echo use-pydocstyle:            $8
-echo extra-pylint-options:      $9
-echo extra-pycodestyle-options: $10
-echo extra-flake8-options:      $11
-echo extra-black-options:       $12
-echo extra-mypy-options:        $13
-echo extra-isort-options:       $14
-echo extra-vulture-options:     $15
-echo extra-pydocstyle-options:  $16
-# rename command line arguments so tha last argument receives what is remaining
-# change this number if more lintners are added
-shift 16
-echo python-root-list:          $@
+echo python-root-list:          $1
+echo use-pylint:                $2
+echo use-pycodestyle:           $3
+echo use-flake8:                $4
+echo use-black:                 $5
+echo use-mypy:                  $6
+echo use-isort:                 $7
+echo use-vulture:               $8
+echo use-pydocstyle             $9
+echo extra-pylint-options:      $10
+echo extra-pycodestyle-options: $11
+echo extra-flake8-options:      $12
+echo extra-black-options:       $13
+echo extra-mypy-options:        $14
+echo extra-isort-options:       $15
+echo extra-vulture-options:     $16
+echo extra-pydocstyle-options:  $17
 
 # actions path has the copy of this actions repo
 for matcher in $GITHUB_ACTION_PATH/matchers/*.json
@@ -50,11 +47,11 @@ done
 echo "TERM: changing from $TERM -> xterm"
 export TERM=xterm
 
-if [ "$1" = true ] ; then
+if [ "$2" = true ] ; then
 
-    echo Running: pylint $8 $@
+    echo Running: pylint $9 $1
 
-    $CONDA/bin/pylint --output-format="colorized" $8 $@
+    $CONDA/bin/pylint --output-format="colorized" $9 $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -65,12 +62,11 @@ if [ "$1" = true ] ; then
 
 fi
 
+if [ "$3" = true ] ; then
 
-if [ "$2" = true ] ; then
+    echo Running: pycodestyle ${11} $1
 
-    echo Running: pycodestyle ${10} $@
-
-    $CONDA/bin/pycodestyle ${10} $@
+    $CONDA/bin/pycodestyle ${11} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -81,11 +77,11 @@ if [ "$2" = true ] ; then
 
 fi
 
-if [ "$3" = true ] ; then
+if [ "$4" = true ] ; then
 
-    echo Running: flake8 ${11} $@
+    echo Running: flake8 ${12} $1
 
-    $CONDA/bin/flake8 ${11} $@
+    $CONDA/bin/flake8 ${12} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -96,11 +92,11 @@ if [ "$3" = true ] ; then
 
 fi
 
-if [ "$4" = true ] ; then
+if [ "$5" = true ] ; then
 
-    echo Running: black --check ${12} $@
+    echo Running: black --check ${13} $1
 
-    $CONDA/bin/black --check ${12} $@
+    $CONDA/bin/black --check ${13} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -111,11 +107,11 @@ if [ "$4" = true ] ; then
 
 fi
 
-if [ "$5" = true ] ; then
+if [ "$6" = true ] ; then
 
-    echo Running: mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers ${13} $@
+    echo Running: mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers ${14} $1
 
-    $CONDA/bin/mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers ${13} $@
+    $CONDA/bin/mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers ${14} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -126,11 +122,11 @@ if [ "$5" = true ] ; then
 
 fi
 
-if [ "$6" = true ] ; then
+if [ "$7" = true ] ; then
 
-    echo Running: isort ${14} $@ -c --diff
+    echo Running: isort ${15} $1 -c --diff
 
-    $CONDA/bin/isort ${14} $@ -c --diff
+    $CONDA/bin/isort ${15} $1 -c --diff
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -141,11 +137,11 @@ if [ "$6" = true ] ; then
 
 fi
 
-if [ "$7" = true ] ; then
+if [ "$8" = true ] ; then
 
-    echo Running: vulture ${15} $@
+    echo Running: vulture ${16} $1
 
-    $CONDA/bin/vulture ${15} $@
+    $CONDA/bin/vulture ${16} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
@@ -156,11 +152,11 @@ if [ "$7" = true ] ; then
 
 fi
 
-if [ "$8" = true ] ; then
+if [ "$9" = true ] ; then
 
-    echo Running: pydocstyle ${16} $@
+    echo Running: pydocstyle ${17} $1
 
-    $CONDA/bin/pydocstyle ${16} $@
+    $CONDA/bin/pydocstyle ${17} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
