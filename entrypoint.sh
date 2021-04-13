@@ -11,7 +11,7 @@
 # $7 - use-isort
 # $8 - use-vulture
 # $9 - use-pydocstyle
-# $10 - extra-pylint-options
+# ${10} - extra-pylint-options
 # ${11} - extra-pycodestyle-options
 # ${12} - extra-flake8-options
 # ${13} - extra-black-options
@@ -29,14 +29,14 @@ echo use-mypy:                  $6
 echo use-isort:                 $7
 echo use-vulture:               $8
 echo use-pydocstyle             $9
-echo extra-pylint-options:      $10
-echo extra-pycodestyle-options: $11
-echo extra-flake8-options:      $12
-echo extra-black-options:       $13
-echo extra-mypy-options:        $14
-echo extra-isort-options:       $15
-echo extra-vulture-options:     $16
-echo extra-pydocstyle-options:  $17
+echo extra-pylint-options:      ${10}
+echo extra-pycodestyle-options: ${11}
+echo extra-flake8-options:      ${12}
+echo extra-black-options:       ${13}
+echo extra-mypy-options:        ${14}
+echo extra-isort-options:       ${15}
+echo extra-vulture-options:     ${16}
+echo extra-pydocstyle-options:  ${17}
 
 # actions path has the copy of this actions repo
 for matcher in $GITHUB_ACTION_PATH/matchers/*.json
@@ -49,9 +49,9 @@ export TERM=xterm
 
 if [ "$2" = true ] ; then
 
-    echo Running: pylint $9 $1
+    echo Running: pylint ${10} $1
 
-    $CONDA/bin/pylint --output-format="colorized" $9 $1
+    $CONDA/bin/pylint --output-format="colorized" ${10} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then

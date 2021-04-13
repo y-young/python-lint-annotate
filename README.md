@@ -3,7 +3,7 @@
 Zero-configuration GitHub Action to maintain code quality with push and PR annotations.
 
 On every push and pull request git diffs will get inline annotated with found errors from
-selected lintners.
+selected linters.
 
 ![Screenshot of annotations](static/annotations.png)
 
@@ -72,7 +72,7 @@ isort==isort-5.7.0
 
 The python version you set up in your action script with `actions/setup-python@v2`
 or by other means will not affect the linting process. The python version used by
-the lintners can be set up only by `conda-python-version` argument! This also means
+the linters can be set up only by `conda-python-version` argument! This also means
 that if you modify the system conda environment it might affect the lintnig process.
 So it is best to keep the lintnig action separated from others. It is also recomended
 to run this on `ubuntu-latest`. Example:

@@ -84,12 +84,12 @@ runs:
         $CONDA/bin/conda --version
         $CONDA/bin/conda install python=${{ inputs.conda-python-version }}
       shell: bash
-      name: Install lintners
+      name: Install linters
     - run: |
         $CONDA/bin/python --version
         $CONDA/bin/pip install -r ${{ github.action_path }}/requirements.txt
       shell: bash
-      name: Install lintners
+      name: Install linters
     - run: >
         ${{ github.action_path }}/entrypoint.sh
         '${{ inputs.python-root-list }}'
