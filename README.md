@@ -31,7 +31,7 @@ Basic:
 ```yml
 steps:
   - uses: actions/checkout@v1
-  - uses: marian-code/python-lint-annotate@v2.5.0
+  - uses: marian-code/python-lint-annotate@v2
 ```
 
 Options:
@@ -39,7 +39,7 @@ Options:
 ```yml
 steps:
   - uses: actions/checkout@v1
-  - uses: marian-code/python-lint-annotate@v2.5.0
+  - uses: marian-code/python-lint-annotate@v2
     with:
       python-root-list: "src/ tests/*"  # accepts wildcards
       use-pycodestyle: false
@@ -88,7 +88,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v1
-    - uses: marian-code/pyaction@v2.5.0
+    - uses: marian-code/pyaction@v2
       with:
         python-root-list: "./tests/*.py"
         use-black: true
