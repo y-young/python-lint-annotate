@@ -46,14 +46,14 @@ steps:
       use-mypy: false
       use-vulture: true
       extra-pylint-options: "--output-format="colorized"
-      conda-python-version: "3.7"
+      python-version: "3.7"
 ```
 
 ## Details
 
-Uses conda environment with user selected python version. Only python `3.6` - `3.9`
-version are tested since they are by far most common now. Other python `3.x` versions
-should also work. Any python `2.x` versions are unsupported!
+Uses `actions/setup-python@v2`. Only python `3.6` - `3.10` version are tested since
+they are by far most common now. Other python `3.x` versions should also work. 
+Any python `2.x` versions are unsupported!
 
 The lintner versions are:
 
@@ -70,12 +70,15 @@ isort==isort-5.7.0
 
 ## IMPORTANT - test environment
 
-The python version you set up in your action script with `actions/setup-python@v2`
-or by other means will not affect the linting process. The python version used by
-the linters can be set up only by `conda-python-version` argument! This also means
-that if you modify the system conda environment it might affect the lintnig process.
-So it is best to keep the lintnig action separated from others. It is also recomended
-to run this on `ubuntu-latest`. Example:
+The python version is set by `actions/setup-python@v2` using composite actions. This
+means that the the action will change python you might have previously set with
+`actions/setup-python@v2`. There are two ways to circumvent this.
+
+- Keep the lintnig action separated from others
+- Use it at the and of your workflow when the change in python version will not
+   affect anything else
+
+Example:
 
 ```yml
 on:
@@ -85,9 +88,15 @@ name: Lint Python
 jobs:
   lintpython:
     name: Lint Python
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - run: |
+        python --version  # this will output 3.9 now
+        run tests or other things using python ...
     - uses: marian-code/pyaction@v2
       with:
         python-root-list: "./tests/*.py"
@@ -100,7 +109,9 @@ jobs:
         use-pylint: false
         use-flake8: false
         use-vulture: true
-        conda-python-version: "3.8"
+        python-version: "3.7"
+    - run: |
+        python --version  # this will output 3.7 now !!!
 ```
 
 ## License
