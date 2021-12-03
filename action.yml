@@ -86,17 +86,19 @@ runs:
         python-version: ${{ inputs.python-version }}
         architecture: x64
         cache: pip
+
     - run: python --version
+
     - name: Is Windows
       if: ${{ runner.os }} == "Windows"
       run:  pip install -r ${{ github.action_path }}\requirements.txt
       shell: bash
-      name: Install lintners on Win
+
     - name: Is Posix
       if: ${{ runner.os }} != "Windows"
       run:  pip install -r ${{ github.action_path }}/requirements.txt
       shell: bash
-      name: Install lintners on Posix
+
     - run: >
         ${{ github.action_path }}/entrypoint.sh
         '${{ inputs.python-root-list }}'
