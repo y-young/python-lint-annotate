@@ -20,5 +20,5 @@ jobs:
         use-pylint: false
         use-flake8: false
         use-vulture: true
-        conda-python-version: "3.6"
+        python-version: "3.6"
 
