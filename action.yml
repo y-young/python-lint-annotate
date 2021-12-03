@@ -80,14 +80,14 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name:
+      uses: actions/setup-python@v2
+      with:
+        python-version: {{ inputs.conda-python-version }}
+        architecture: x64
     - run: |
-        $CONDA/bin/conda --version
-        $CONDA/bin/conda install python=${{ inputs.conda-python-version }}
-      shell: bash
-      name: Install lintners
-    - run: |
-        $CONDA/bin/python --version
-        $CONDA/bin/pip install -r ${{ github.action_path }}/requirements.txt
+        python --version
+        pip install -r ${{ github.action_path }}/requirements.txt
       shell: bash
       name: Install lintners
     - run: >
