@@ -146,4 +146,4 @@ runs:
         '${{ inputs.extra-isort-options }}'
         '${{ inputs.extra-vulture-options }}'
         '${{ inputs.extra-pydocstyle-options }}'
-      shell: pwsh
+      shell: bash
