@@ -1,5 +1,3 @@
-#!/bin/sh -l
-
 # Parameters
 #
 # $1 - python-root-list
@@ -39,7 +37,16 @@ echo extra-vulture-options:     ${16}
 echo extra-pydocstyle-options:  ${17}
 
 # actions path has the copy of this actions repo
-for matcher in $GITHUB_ACTION_PATH/matchers/*.json
+echo $RUNNER_OS
+if [ $RUNNER_OS = 'Windows' ]
+then
+    MATCHERS=$GITHUB_ACTION_PATH\matchers\*.json
+else
+    MATCHERS=$GITHUB_ACTION_PATH/matchers/*.json
+fi
+echo $MATCHERS
+
+for matcher in $MATCHERS
 do
     echo adding matcher $matcher
     echo "::add-matcher::${matcher}"

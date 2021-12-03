@@ -86,23 +86,48 @@ runs:
         python-version: ${{ inputs.python-version }}
         architecture: x64
         cache: pip
-
+    
     - run: python --version
       shell: bash
 
-    - name: Is Windows
+    - name: Windows install dependencies
       if: ${{ runner.os == 'Windows' }}
       run:  |
         pip install -r ${{ github.action_path }}\requirements.txt
         echo "path_sep=" >> $GITHUB_ENV
       shell: pwsh
 
-    - name: Is Posix
+    - name: Posix install dependencies
       if: ${{ runner.os != 'Windows' }}
       run:  pip install -r ${{ github.action_path }}/requirements.txt
       shell: bash
 
-    - run: >
+    - name: Lint on Windows
+      if: ${{ runner.os == 'Windows' }}
+      run: >
+        ${{ github.action_path }}\entrypoint.sh
+        '${{ inputs.python-root-list }}'
+        ${{ inputs.use-pylint }}
+        ${{ inputs.use-pycodestyle }}
+        ${{ inputs.use-flake8 }}
+        ${{ inputs.use-black }}
+        ${{ inputs.use-mypy }}
+        ${{ inputs.use-isort }}
+        ${{ inputs.use-vulture }}
+        ${{ inputs.use-pydocstyle }}
+        '${{ inputs.extra-pylint-options }}'
+        '${{ inputs.extra-pycodestyle-options }}'
+        '${{ inputs.extra-flake8-options }}'
+        '${{ inputs.extra-black-options }}'
+        '${{ inputs.extra-mypy-options }}'
+        '${{ inputs.extra-isort-options }}'
+        '${{ inputs.extra-vulture-options }}'
+        '${{ inputs.extra-pydocstyle-options }}'
+      shell: pwsh
+
+    - name: Lint on Linux
+      if: ${{ runner.os == 'Linux' }}
+      run: >
         ${{ github.action_path }}/entrypoint.sh
         '${{ inputs.python-root-list }}'
         ${{ inputs.use-pylint }}
@@ -121,5 +146,4 @@ runs:
         '${{ inputs.extra-isort-options }}'
         '${{ inputs.extra-vulture-options }}'
         '${{ inputs.extra-pydocstyle-options }}'
-      shell: bash
-      name: Lint
+      shell: pwsh
