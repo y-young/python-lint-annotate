@@ -12,7 +12,7 @@ jobs:
         python-version: ['3.6', '3.7', '3.8', '3.9', '3.10']
     steps:
     - uses: actions/checkout@v1
-    - uses: marian-code/pyaction@master
+    - uses: marian-code/python-lint-annotate@master
       with:
         python-root-list: "./tests/*.py ./tests/subtest/*.py"
         use-black: true
