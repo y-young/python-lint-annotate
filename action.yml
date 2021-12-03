@@ -88,6 +88,7 @@ runs:
         cache: pip
 
     - run: python --version
+      shell: bash
 
     - name: Is Windows
       if: ${{ runner.os }} == "Windows"
