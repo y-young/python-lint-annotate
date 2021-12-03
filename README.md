@@ -52,17 +52,17 @@ steps:
 ## Details
 
 Uses `actions/setup-python@v2`. Only python `3.6` - `3.10` version are tested since
-they are by far most common now. Other python `3.x` versions should also work. 
-Any python `2.x` versions are unsupported!
+they are by far most common now. Other python `3.x` versions should also work.
+Any python `2.x` versions are unsupported! You can lint on Linux, Windows and MacOS.
 
 The lintner versions are:
 
 ```bash
-pycodestyle==2.6.0
-pydocstyle==5.1.1
-pylint==2.6.0
-mypy==0.800
-black==20.8b1
+pycodestyle==2.8.0  # from 3.5
+pydocstyle==6.1.1
+pylint==2.12.1
+mypy==0.910
+black==21.11b1
 flake8==3.8.4
 vulture==2.3
 isort==isort-5.7.0
