@@ -7,6 +7,12 @@ jobs:
     name: Lint Python
     runs-on: ubuntu-20.04
     steps:
+    - name:
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - run: |
+        python --version
     - uses: actions/checkout@v1
     - uses: marian-code/pyaction@master
       with:
@@ -21,4 +27,6 @@ jobs:
         use-flake8: false
         use-vulture: true
         python-version: "3.6"
+    - run: |
+        python --version
 
