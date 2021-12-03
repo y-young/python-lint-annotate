@@ -58,14 +58,14 @@ Any python `2.x` versions are unsupported! You can lint on Linux, Windows and Ma
 The lintner versions are:
 
 ```bash
-pycodestyle==2.8.0  # from 3.5
+pycodestyle==2.8.0
 pydocstyle==6.1.1
 pylint==2.12.1
 mypy==0.910
 black==21.11b1
-flake8==3.8.4
+flake8==4.0.1
 vulture==2.3
-isort==isort-5.7.0
+isort==5.10.1
 ```
 
 ## IMPORTANT - test environment
