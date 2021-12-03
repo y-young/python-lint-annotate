@@ -83,7 +83,7 @@ runs:
     - name:
       uses: actions/setup-python@v2
       with:
-        python-version: {{ inputs.conda-python-version }}
+        python-version: ${{ inputs.conda-python-version }}
         architecture: x64
     - run: |
         python --version
