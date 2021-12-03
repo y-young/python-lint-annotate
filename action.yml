@@ -72,8 +72,8 @@ inputs:
     description: "Extra options: pydocstyle $(extra-pydocstyle-options) $(python-root-list)"
     required: false
     default: ""
-  conda-python-version:
-    description: "Tests are run in Conda environment, set desired python version with this keyword"
+  python-version:
+    description: "Set desired python version with this keyword"
     required: false
     default: "3.8"
 
