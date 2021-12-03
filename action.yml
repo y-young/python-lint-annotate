@@ -92,8 +92,10 @@ runs:
 
     - name: Is Windows
       if: ${{ runner.os == 'Windows' }}
-      run:  pip install -r ${{ github.action_path }}\requirements.txt
-      shell: PowerShell
+      run:  |
+        pip install -r ${{ github.action_path }}\requirements.txt
+        echo "path_sep=" >> $GITHUB_ENV
+      shell: pwsh
 
     - name: Is Posix
       if: ${{ runner.os != 'Windows' }}
