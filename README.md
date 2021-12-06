@@ -97,7 +97,7 @@ jobs:
     - run: |
         python --version  # this will output 3.9 now
         run tests or other things using python ...
-    - uses: marian-code/pyaction@v2
+    - uses: marian-code/python-lint-annotate@v3
       with:
         python-root-list: "./tests/*.py"
         use-black: true
