@@ -49,6 +49,9 @@ steps:
       python-version: "3.7"
 ```
 
+### Examples
+* [Only lint changed files, and ignore missing docstrings](examples/actions-only_changed_files.yml)
+
 ## Details
 
 Uses `actions/setup-python@v2`. Only python `3.6` - `3.10` version are tested since
