@@ -116,9 +116,13 @@ fi
 
 if [ "$6" = true ] ; then
 
-    echo Running: mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers ${14} $1
+    echo Running: mypy --install-types --non-interactive --ignore-missing-imports --follow-imports=silent --show-column-numbers ${14} $1
 
-    mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers ${14} $1
+    mypy \
+      --install-types --non-interactive \
+      --ignore-missing-imports \
+      --follow-imports=silent \
+      --show-column-numbers ${14} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then

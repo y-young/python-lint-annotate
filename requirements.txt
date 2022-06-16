@@ -1,7 +1,7 @@
 black==21.11b1
 flake8==4.0.1
 isort==5.10.1
-mypy==0.910
+mypy~=0.961
 pycodestyle==2.8.0
 pydocstyle==6.1.1
 pylint==2.12.1
